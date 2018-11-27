@@ -1,0 +1,115 @@
+html, body {
+ font-family: 'Roboto', sans-serif;
+ font-size: 14px;
+ height: 100%;
+ margin: 0px;
+ padding: 0px;
+}
+
+md-toolbar h3 {
+    margin: auto;
+    font-weight: 500;
+}
+md-list-item > button {
+  width: 100%;
+  text-align: left !important;
+}
+
+#content {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 5px;
+}
+.avatar {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  zoom: 0.70;
+  transform:  translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform: scale(0.70);
+}
+
+
+.caja-mensajes{
+  overflow-y: scroll;
+}
+.caja-mensaje{
+  margin: 20px;
+}
+.mensaje-autor{ 
+  margin-bottom: 50px; 
+  text-align: right;
+} 
+.mensaje-autor img, .mensaje-amigo img{ 
+  display: inline-block; 
+  vertical-align: top; 
+} 
+.mensaje-autor .contenido{ 
+  background-color: white; 
+  border-radius: 5px; 
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.3); 
+  display: inline-block; 
+  font-size: 13px; 
+  padding: 15px; 
+  vertical-align: top; 
+  width: 280px; 
+} 
+.mensaje-autor .fecha{ 
+  color: #777; 
+  font-style: italic; 
+  font-size: 13px; 
+  text-align: right; 
+  margin-right: 35px; 
+  margin-top: 10px; 
+} 
+.mensaje-autor .flecha-izquierda{ 
+  display: inline-block; 
+  margin-right: -6px; 
+  margin-top: 10px; 
+  width: 0;  
+  height: 0;  
+  border-top: 0px solid transparent; 
+  border-bottom: 15px solid transparent; 
+  border-right: 15px solid white; 
+} 
+.mensaje-amigo{ 
+  margin-bottom: 50px; 
+} 
+.mensaje-amigo .contenido{ 
+  background-color: #3990BF; 
+  border-radius: 5px; 
+  color: white; 
+  display: inline-block; 
+  font-size: 13px; 
+  padding: 15px; 
+  vertical-align: top; 
+  width: 280px; 
+} 
+.mensaje-amigo .flecha-derecha{ 
+  display: inline-block; 
+  margin-left: -6px; 
+  margin-top: 10px; 
+  width: 0;  
+  height: 0;  
+  border-top: 0px solid transparent; 
+  border-bottom: 15px solid transparent; 
+  border-left: 15px solid #3990BF; 
+} 
+.mensaje-amigo img, .mensaje-autor img{ 
+  border-radius: 5px; 
+} 
+.mensaje-amigo .fecha{ 
+  color: #777; 
+  font-style: italic; 
+  font-size: 13px; 
+  text-align: left; 
+   
+  margin-top: 10px; 
+} 

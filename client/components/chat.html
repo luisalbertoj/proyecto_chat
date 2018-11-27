@@ -1,0 +1,106 @@
+<div class="container" layout="row" flex ng-controller="UserController as ul">
+    <md-sidenav md-is-locked-open="true"  class="md-whiteframe-4dp">
+      
+      <md-content layout="row">
+            <md-icon md-svg-src="./icons/chico.svg" class="avatar"></md-icon>
+            <h3 style="margin: auto;">{{usuarioActual.username}}</h3>
+            <md-button ng-click="ul.logout()" class="md-raised md-primary" style="height: 50%;">Log Out</md-button>
+      </md-content>
+
+      <div style="width: 90%; padding: 1em">
+        <md-input-container class="md-icon-float md-block">
+            <input  type="text" ng-model="friend.username" name="friend" ng-required="true" placeholder="Buscar amigos" required>
+            <md-button ng-click="ul.addFriend()" class="md-raised md-primary">Buscar</md-button>
+        </md-input-container>
+        
+      </div>
+      <hr>
+      <md-list>
+        <md-list-item ng-repeat="u in users">
+            <md-button ng-click="ul.selectUser(u)">
+                <md-icon md-svg-src="./icons/chico.svg" class="avatar"></md-icon>
+                {{u.username}}
+              </md-button>
+        </md-list-item>
+      </md-list> 
+    </md-sidenav>
+    <md-content id="" class="md-whiteframe-4dp" flex>
+            <md-card>
+            <md-toolbar layout="row">
+                <md-icon md-svg-src="./icons/chico.svg" class="avatar"></md-icon>
+                <h3>{{ul.selected.username}}</h3>
+            </md-toolbar>
+            <md-card-title>
+            </md-card-title>
+            <md-card-content>
+                <div class="caja-mensajes">
+                    <div  class="caja-mensaje" ng-repeat="msg in messages">
+                        <div class="mensaje-autor" ng-if="msg.createdBy.id === ul.selected.id"> 
+                            <img src="" alt="" class="foto"> 
+                            <div class="flecha-izquierda"></div> 
+                            <div class="contenido"> 
+                                <p>{{msg.createdBy.username}} dice:</p>
+                                <p>{{msg.message}}</p>
+                            </div> 
+                            <div class="fecha">
+                                    <span>{{msg.createdAt  | date:"MM/dd/yyyy 'at' h:mma"}}</span><br>
+                            </div> 
+                        </div> 
+                
+                        <div class="mensaje-amigo" ng-if="msg.createdBy.id !== ul.selected.id"> 
+                            <div class="contenido"> 
+                                <p>{{msg.createdBy.username}} dice:</p>
+                                <p>{{msg.message}}</p>
+                            </div> 
+                            <div class="flecha-derecha"></div> 
+                            <img src="" alt="" class="foto"> 
+                            <div class="fecha">
+                                    <span>{{msg.createdAt  | date:"MM/dd/yyyy 'at' h:mma"}}</span><br>
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="center">
+                <md-input-container class="md-icon-float md-block" style="width: 90%";>
+                        <input  type="text" ng-model="message.content" name="content" placeholder="Escribe tu mensaje" required>
+                </md-input-container>
+                <md-button ng-click="ul.sendMessage()" class="md-raised md-primary" style="height: 50%;">Enviar</md-button>
+            </md-card-actions>
+            </md-card>
+
+
+       <!--  <md-toolbar layout="row">
+            <md-icon md-svg-src="./icons/chica.svg" class="avatar"></md-icon>
+               <h3>{{ul.selected.username}}</h3>
+          </md-toolbar>
+          <div class="caja-mensajes">
+          <div  class="caja-mensaje" ng-repeat="msg in ul.selected.msg">
+            <div class="mensaje-autor" ng-if="msg.emisor === ul.selected.name"> 
+                <img src="" alt="" class="foto"> 
+                <div class="flecha-izquierda"></div> 
+                <div class="contenido"> 
+                    <p>{{msg.content}}</p>
+                </div> 
+                <div class="fecha">Enviado hace tres minutos</div> 
+            </div> 
+    
+            <div class="mensaje-amigo" ng-if="msg.emisor !== ul.selected.name"> 
+                <div class="contenido"> 
+                    <p>{{msg.content}}</p>
+                </div> 
+                <div class="flecha-derecha"></div> 
+                <img src="" alt="" class="foto"> 
+                <div class="fecha">Enviado hace tres minutos</div> 
+            </div> 
+          </div>
+        </div>
+        <md-content layout="row">
+            <md-input-container class="md-icon-float md-block" >
+                <input  type="text" ng-model="friend.username" name="friend" ng-required="true" placeholder="Escribe tu mensaje" required>
+            </md-input-container>
+            <md-button ng-click="ul.addFriend()" class="md-raised md-primary" style="height: 50%;">Enviar</md-button>
+        </md-content>
+        -->
+    </md-content>
+  </div>

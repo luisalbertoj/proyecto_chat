@@ -1,0 +1,30 @@
+<div class="container-login" ng-controller="UserController as ul">
+    <div layout="column" layout-padding ng-cloak>
+    <md-toolbar md-scroll-shrink ng-if="true">
+    <div class="md-toolbar-tools">
+        <h3>
+        <span>Registro de Usuarios</span>
+        </h3>
+    </div>
+    </md-toolbar>        
+    <br/>
+    <md-content class="md-no-momentum">
+        <form>
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <input  type="text" name="username" ng-model="newUser.username" ng-required="true" placeholder="Username" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <input  type="email" name="email" ng-model="newUser.email" ng-required="true" placeholder="Email" required>
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <input  type="password" name="password" ng-model="newUser.password" ng-required="true" placeholder="Password" required>
+        </md-input-container>
+        <md-button ng-click="ul.addUser()" class="md-raised md-primary">Register</md-button>
+        <a ui-sref="login">Login</a>
+        </form>
+    </md-content>
+    </div>
+</div>
